@@ -1,0 +1,79 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+    padding-top: 50px;
+}
+
+h2 {
+    color: #333;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    width: 220px;
+    margin: 5px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Flash messages */
+.flash-message {
+    display: none; /* hidden by default */
+    margin: 20px auto;
+    padding: 12px 25px;
+    width: 300px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Show when exists */
+.flash-message.show {
+    display: block;
+}
+
+/* Pastel colors */
+.flash-message.success {
+    background-color: #d1ffd6; /* light green */
+    color: #1a4d1a;
+    border: 1px solid #a3e6a3;
+}
+
+.flash-message.error {
+    background-color: #ffd1d1; /* light red/pink */
+    color: #660000;
+    border: 1px solid #ff9999;
+}
+
+.flash-message.info {
+    background-color: #d1e0ff; /* light blue */
+    color: #003366;
+    border: 1px solid #99bbff;
+}

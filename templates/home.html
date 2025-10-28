@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Welcome, {{ username }}!</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="flash-message {{ category }} show">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <button type="submit" name="choice" value="Rock">Rock ✊</button>
+        <button type="submit" name="choice" value="Paper">Paper ✋</button>
+        <button type="submit" name="choice" value="Scissors">Scissors ✌️</button>
+    </form>
+
+    {% if user_choice %}
+        <h3>Your choice: {{ user_choice }}</h3>
+        <h3>Computer choice: {{ computer_choice }}</h3>
+    {% endif %}
+
+    <br><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
