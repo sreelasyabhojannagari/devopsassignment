@@ -1,0 +1,13 @@
+apiVersion: v1                  # API version for Services
+kind: Service                   # Resource type: Service
+metadata:
+  name: devops-service     # Name of the Service
+spec:
+  selector:
+    app: kubedemocapp            # Service targets pods with this label
+  ports:
+  - protocol: TCP                # Communication protocol
+    port: 5000                   # Port exposed by the Service (for clients)
+    targetPort: 5000             # Container port the Service forwards traffic to
+    nodePort: 30088              # External port (accessible on cluster nodes)
+  type: NodePort                 # Service type (exposes app externally via Node IP)
