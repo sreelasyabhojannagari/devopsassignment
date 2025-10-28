@@ -1,0 +1,19 @@
+apiVersion: apps/v1           # API version for Deployments
+kind: Deployment              # Resource type: Deployment
+metadata:
+  name: devops-deployment  # Name of the Deployment
+spec:
+  replicas: 4                    # Number of pods (replicas) to run
+  selector:
+    matchLabels:
+      app: kubedemocapp          # Select pods with this label
+  template:
+    metadata:
+      labels:
+        app: kubedemocapp        # Label applied to pods created by this deployment
+    spec:
+      containers:
+      - name: devopscontainer       # Container name
+        image: sreelasya24/first-devopsimage:v1  # Docker image (from Docker Hub)
+        ports:
+        - containerPort: 5000    # Port exposed by the container
