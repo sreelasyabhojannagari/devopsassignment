@@ -1,6 +1,17 @@
-from python:3.9-slim-buster
-workdir /app
-copy . /app
-run pip install --no-cache-dir -r requirements.txt 
-expose 5000
-cmd ["python","app.py"]
+# ✅ Use a smaller, stable image that resolves properly on all systems
+FROM python:3.9-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy all files
+COPY . /app
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt || pip install flask
+
+# Expose the application port
+EXPOSE 5000
+
+# Run the Flask app
+CMD ["python", "app.py"]
